@@ -7,13 +7,20 @@ import {
 import { Container, Row, Col, FormInput, Button } from "shards-react";
 import {Messages} from "./Messages";
 import {POST_MESSAGE} from "../queries/ChatQueries";
+import {WebSocketLink} from "@apollo/client/link/ws";
 
-
+const link = new WebSocketLink({
+    uri: `ws://localhost:4000/`,
+    options: {
+        reconnect: true,
+    },
+});
 
 const client = new ApolloClient({
-    uri: 'http://localhost:4000/',
+    link,
+    uri: "http://localhost:4000/",
     cache: new InMemoryCache(),
-})
+});
 
 const Chat = () => {
     const [state, stateSet] = useState({

@@ -1,9 +1,9 @@
-import {useQuery} from "@apollo/client";
+import { useSubscription} from "@apollo/client";
 import {GET_MESSAGES} from "../queries/ChatQueries";
 import {memo} from "react";
 
 export const Messages = memo(({user}) => {
-    const {data} = useQuery(GET_MESSAGES)
+    const {data} = useSubscription(GET_MESSAGES)
 
     if (!data) {
         return null
