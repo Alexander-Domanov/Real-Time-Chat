@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css"
 
 import "./index.css";
-import Chat from "./Chat";
+import Chat from "./сomponents/Chat";
 
 const App = () => (
     <div className="container">
